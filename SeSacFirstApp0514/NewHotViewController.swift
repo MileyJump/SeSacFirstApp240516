@@ -38,8 +38,15 @@ class NewHotViewController: UIViewController {
 
         openButton.setTitle("공개 예정", for: .normal)
         openButton.backgroundColor = .white
-        openButton.setImage(UIImage(named: "blue"), for: .normal)
+        // titleLabel은 delfault타입일 때만 사용 가능함
+        // 디폴트 타입으로 변경하면 나옴
         openButton.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        // 그러면 이미지가 안 나오게 되는데,
+        // Image Rendering Mode : temlate vs original 확인
+        // 템플릿 모드가 아닌 오리지널로 해야 함
+        let image = UIImage(named: "blue")?.withRenderingMode(.alwaysOriginal)
+        openButton.setImage(image, for: .normal)
+        
         openButton.setTitleColor(.black, for: .normal)
         openButton.layer.cornerRadius = 20
         

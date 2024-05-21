@@ -28,39 +28,13 @@ class NetflixViewController: UIViewController {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 26)
         titleLabel.textColor = .red
         
-       
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "이메일 주소 또는 비밀번호", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        emailTextField.backgroundColor = .gray
-        emailTextField.layer.cornerRadius = 5
-        emailTextField.keyboardType = .default
-        emailTextField.textAlignment = .center
+       textFieldLayout(emailTextField, textLabel: "이메일 주소 또는 비밀번호")
+       textFieldLayout(passwordTextField, textLabel: "비밀번호")
+       textFieldLayout(nickNameTextField, textLabel: "닉네임")
+       textFieldLayout(locationTextField, textLabel: "위치")
+       textFieldLayout(codeTextField, textLabel: "추천 코드 입력")
         
-        
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        passwordTextField.backgroundColor = .gray
-        passwordTextField.layer.cornerRadius = 5
-        passwordTextField.keyboardType = .numberPad
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.textAlignment = .center
-        
-        
-        nickNameTextField.attributedPlaceholder = NSAttributedString(string: "닉네임", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        nickNameTextField.backgroundColor = .gray
-        nickNameTextField.layer.cornerRadius = 5
-        nickNameTextField.keyboardType = .default
-        nickNameTextField.textAlignment = .center
-        
-        locationTextField.attributedPlaceholder = NSAttributedString(string: "위치", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        locationTextField.backgroundColor = .gray
-        locationTextField.layer.cornerRadius = 5
-        locationTextField.keyboardType = .default
-        locationTextField.textAlignment = .center
-        
-        codeTextField.attributedPlaceholder = NSAttributedString(string: "추천 코드 입력", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        codeTextField.backgroundColor = .gray
-        codeTextField.layer.cornerRadius = 5
-        codeTextField.keyboardType = .default
-        codeTextField.textAlignment = .center
+    
         
         
         joinButton.setTitle("회원가입", for: .normal)
@@ -76,7 +50,14 @@ class NetflixViewController: UIViewController {
         addSwitch.thumbTintColor = .white
     }
     
-    
+    func textFieldLayout(_ textField: UITextField, textLabel: String){
+        textField.attributedPlaceholder = NSAttributedString(string: textLabel, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        textField.backgroundColor = .gray
+        textField.layer.cornerRadius = 5
+        textField.keyboardType = .default
+        textField.textAlignment = .center
+        
+    }
     
    
     
